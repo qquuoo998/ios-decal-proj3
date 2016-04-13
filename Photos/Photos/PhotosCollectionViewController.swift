@@ -11,7 +11,7 @@ import UIKit
 class PhotosCollectionViewController: UICollectionViewController {
     var photos: [Photo]!
     var pics: [UIImage]!
-    var completionCount = 0
+   // var completionCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,12 +79,7 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
     
     func appendToPhoto(img: UIImage, index: Int) {
-//        self.completionCount++
         self.pics[index] = img
-//        if (self.completionCount == self.photos.count) {
-//            self.collectionView!.reloadData()
-//            self.collectionView!.reloadData()
-//        }
     }
     
     
