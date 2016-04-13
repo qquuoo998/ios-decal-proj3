@@ -11,6 +11,7 @@ import Foundation
 class Photo {
     /* The number of likes the photo has. */
     var likes : Int!
+    var urlHQ: String!
     /* The string of the url to the photo file. */
     var url : String!
     /* The username of the photographer. */
@@ -20,6 +21,10 @@ class Photo {
     init (data: NSDictionary) {
         // FILL ME IN
         // HINT: use nested .valueForKey() calls, and then cast using 'as! TYPE'
+        urlHQ = ((data.valueForKey("images") as! NSDictionary).valueForKey("standard_resolution") as! NSDictionary).valueForKey("url") as! String
+        username = (data.valueForKey("user") as! NSDictionary).valueForKey("username") as! String
+        url = ((data.valueForKey("images") as! NSDictionary).valueForKey("low_resolution") as! NSDictionary).valueForKey("url") as! String
+        likes = (data.valueForKey("likes") as! NSDictionary).valueForKey("count") as! Int
     }
 
 }
